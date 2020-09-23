@@ -8,86 +8,86 @@
     <constant name="struts.il8n.encoding" value="UTF-8"/>
     <package name="default" extends="struts-default">
 
-        <action name="managerLogin" class="com.rxc.action.ManagerAction" method="managerLogin">
+        <action name="managerLogin" class="managerAction" method="managerLogin">
             <result name="success">/manager_index.jsp</result>
             <result name="input">/manager_login.jsp</result>
         </action>
 
-        <action name="teacherRegist" class="com.rxc.action.TeacherAction" method="teacherRegist">
+        <action name="teacherRegist" class="teacherAction" method="teacherRegist">
             <result name="success">/add_teacher.jsp</result>
             <result name="error">/add_teacher.jsp</result>
         </action>
-        <action name="teacherLogin" class="com.rxc.action.TeacherAction" method="teacherLogin">
+        <action name="teacherLogin" class="teacherAction" method="teacherLogin">
             <result name="success">/teacher_index.jsp</result>
             <result name="error">/teacher_login.jsp</result>
         </action>
 
-        <action name="studentRegist" class="com.rxc.action.StudentAction" method="studentRegist">
+        <action name="studentRegist" class="studentAction" method="studentRegist">
             <result name="success">/add_student.jsp</result>
             <result name="error">/add_student.jsp</result>
         </action>
-        <action name="studentLogin" class="com.rxc.action.StudentAction" method="studentLogin">
+        <action name="studentLogin" class="studentAction" method="studentLogin">
             <result name="success">/student_index.jsp</result>
             <result name="error">/student_login.jsp</result>
         </action>
-        <action name="studentSeeInfor" class="com.rxc.action.StudentAction" method="studentSeeInfor">
+        <action name="studentSeeInfor" class="studentAction" method="studentSeeInfor">
             <result name="success">/student_infor.jsp</result>
             <result name="error">/student_infor.jsp</result>
         </action>
 
-        <action name="addCourse" class="com.rxc.action.CourseAction" method="addCourse">
+        <action name="addCourse" class="courseAction" method="addCourse">
             <result name="success">/add_course.jsp</result>
             <result name="error">/add_course.jsp</result>
         </action>
-        <action name="findCourse" class="com.rxc.action.CourseAction" method="findCourse">
+        <action name="findCourse" class="courseAction" method="findCourse">
             <result name="teachersuccess">/teacher_index.jsp</result>
             <result name="managersuccess">/manage_course.jsp</result>
             <result name="teachererror">/teacher_index.jsp</result>
             <result name="managererror">/manage_course.jsp</result>
         </action>
-        <action name="teacherChooseCourse" class="com.rxc.action.CourseAction" method="teacherChooseCourse">
+        <action name="teacherChooseCourse" class="courseAction" method="teacherChooseCourse">
             <result name="success">/teacher_index.jsp</result>
             <result name="error">/teacher_index.jsp</result>
         </action>
-        <action name="teacherQuitCourse" class="com.rxc.action.CourseAction" method="teacherQuitCourse">
+        <action name="teacherQuitCourse" class="courseAction" method="teacherQuitCourse">
             <result name="success">/teacher_seeCourse.jsp</result>
             <result name="error">/teacher_seeCourse.jsp</result>
         </action>
-        <action name="teacherSeeCourse" class="com.rxc.action.CourseAction" method="teacherSeeCourse">
+        <action name="teacherSeeCourse" class="courseAction" method="teacherSeeCourse">
             <result name="success">/teacher_seeCourse.jsp</result>
         </action>
-        <action name="getAllCourse" class="com.rxc.action.CourseAction" method="getAllCourse">
+        <action name="getAllCourse" class="courseAction" method="getAllCourse">
             <result name="teachersuccess">/teacher_index.jsp</result>
             <result name="managersuccess">/manage_course.jsp</result>
             <result name="error">/teacher_index.jsp</result>
         </action>
-        <action name="findCourseFromStudent" class="com.rxc.action.CourseAction" method="findCourseFromStudent">
+        <action name="findCourseFromStudent" class="courseAction" method="findCourseFromStudent">
             <result name="success">/student_index.jsp</result>
             <result name="error">/student_index.jsp</result>
         </action>
-        <action name="getAllTC" class="com.rxc.action.CourseAction" method="getAllTC">
+        <action name="getAllTC" class="courseAction" method="getAllTC">
             <result name="success">/student_index.jsp</result>
         </action>
-        <action name="studentSeeCourse" class="com.rxc.action.CourseAction" method="studentSeeCourse">
+        <action name="studentSeeCourse" class="courseAction" method="studentSeeCourse">
             <result name="success">/student_seeCourse.jsp</result>
         </action>
-        <action name="studentChooseCourse" class="com.rxc.action.CourseAction" method="studentChooseCourse">
+        <action name="studentChooseCourse" class="courseAction" method="studentChooseCourse">
             <result name="success">/student_index.jsp</result>
             <result name="error">/student_index.jsp</result>
         </action>
-        <action name="studentQuitCourse" class="com.rxc.action.CourseAction" method="studentQuitCourse">
+        <action name="studentQuitCourse" class="courseAction" method="studentQuitCourse">
             <result name="success">/student_index.jsp</result>
             <result name="error">/student_index.jsp</result>
         </action>
-        <action name="teacherSeeDetail" class="com.rxc.action.CourseAction" method="teacherSeeDetail">
+        <action name="teacherSeeDetail" class="courseAction" method="teacherSeeDetail">
             <result name="success">/teacher_manage_score.jsp</result>
             <result name="error">/teacher_manage_score.jsp</result>
         </action>
-        <action name="teacherUpdateScore" class="com.rxc.action.CourseAction" method="teacherUpdateScore">
+        <action name="teacherUpdateScore" class="courseAction" method="teacherUpdateScore">
             <result name="success">/teacher_manage_score.jsp</result>
             <result name="input">/teacher_manage_score.jsp</result>
         </action>
-        <action name="studentSeeScore" class="com.rxc.action.CourseAction" method="studentSeeScore">
+        <action name="studentSeeScore" class="courseAction" method="studentSeeScore">
             <result name="success">/student_seeScore.jsp</result>
         </action>
     </package>

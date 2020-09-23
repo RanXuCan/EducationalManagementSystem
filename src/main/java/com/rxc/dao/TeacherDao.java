@@ -1,6 +1,7 @@
 package com.rxc.dao;
 
 import com.rxc.entity.Teacher;
+import org.springframework.stereotype.Repository;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,6 +14,7 @@ import java.util.List;
  * @Author RanXuCan
  * @Date 2020/9/22 22:46
  */
+@Repository
 public class TeacherDao extends BaseDao {
     public boolean addTeacher(Teacher tea) {             //添加教师
         try {

@@ -3,6 +3,7 @@ package com.rxc.dao;
 import com.rxc.entity.Course;
 import com.rxc.entity.TC;
 import com.rxc.entity.Teacher;
+import org.springframework.stereotype.Repository;
 
 import java.sql.CallableStatement;
 import java.sql.PreparedStatement;
@@ -16,6 +17,7 @@ import java.util.List;
  * @Author RanXuCan
  * @Date 2020/9/22 20:43
  */
+@Repository(value = "tcDao")
 public class TCDao extends BaseDao {
 
     public List<Course> getCourseListByTno(String tno) {           //根据教师工号返回他教的课

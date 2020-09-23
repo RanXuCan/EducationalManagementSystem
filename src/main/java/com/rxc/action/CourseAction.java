@@ -3,8 +3,12 @@ package com.rxc.action;
 import com.opensymphony.xwork2.ActionSupport;
 import com.rxc.entity.Course;
 import com.rxc.service.CourseService;
+import lombok.Getter;
+import lombok.Setter;
 import org.apache.struts2.ServletActionContext;
+import org.springframework.stereotype.Controller;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -12,22 +16,15 @@ import javax.servlet.http.HttpServletRequest;
  * @Author RanXuCan
  * @Date 2020/9/22 23:22
  */
+@Controller
 public class CourseAction extends ActionSupport {
 
-    /**
-     *
-     */
-
+    @Getter
+    @Setter
     private Course course;
-    private final CourseService courseService = new CourseService();
 
-    public Course getCourse() {
-        return course;
-    }
-
-    public void setCourse(Course course) {
-        this.course = course;
-    }
+    @Resource
+    private CourseService courseService;
 
     public String addCourse() {
         if (courseService.addCourse(course)) return SUCCESS;

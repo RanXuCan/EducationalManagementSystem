@@ -1,6 +1,7 @@
 package com.rxc.dao;
 
 import com.rxc.entity.Course;
+import org.springframework.stereotype.Repository;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,6 +14,7 @@ import java.util.List;
  * @Author RanXuCan
  * @Date 2020/9/22 20:10
  */
+@Repository
 public class CourseDao extends BaseDao {
 
     public boolean addCourse(Course course) {               //添加课程

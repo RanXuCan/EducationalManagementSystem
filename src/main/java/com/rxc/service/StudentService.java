@@ -3,6 +3,8 @@ package com.rxc.service;
 import com.rxc.dao.StudentDao;
 import com.rxc.entity.Student;
 import org.apache.struts2.ServletActionContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -11,12 +13,14 @@ import javax.servlet.http.HttpServletRequest;
  * @Author RanXuCan
  * @Date 2020/9/22 23:15
  */
+@Service
 public class StudentService {
-    StudentDao dao = new StudentDao();
+    @Autowired
+    private StudentDao dao;
 
     public boolean addStudent(Student stu) {
         HttpServletRequest request = ServletActionContext.getRequest();   //请求作用域保存注册情况的信息
-        String message = null;
+        String message;
         if(dao.addStudent(stu)) {
             message = "注册学生成功!";
             request.setAttribute("message", message);
@@ -31,7 +35,7 @@ public class StudentService {
 
     public boolean isStudent(Student stu) {
         HttpServletRequest request = ServletActionContext.getRequest();   //请求作用域保存登录情况的信息
-        String message = null;
+        String message;
         if(dao.isStudent(stu.getSno().trim(), stu.getSpassword().trim())) {
             Student existstu = dao.findStudent(stu.getSno().trim());
             String studentname = existstu.getSname();

@@ -1,6 +1,7 @@
 package com.rxc.dao;
 
 import com.rxc.entity.Grade;
+import org.springframework.stereotype.Repository;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,6 +14,7 @@ import java.util.List;
  * @Author RanXuCan
  * @Date 2020/9/22 20:17
  */
+@Repository
 public class GradeDao extends BaseDao {
     public boolean insertIntoGrade(int tcid, String sno) {     //学生选课，此时score并未保存，为null
         String sql = "insert into grade(tcid,sno) values(?,?)";

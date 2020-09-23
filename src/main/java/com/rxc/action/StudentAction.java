@@ -3,27 +3,24 @@ package com.rxc.action;
 import com.opensymphony.xwork2.ActionSupport;
 import com.rxc.entity.Student;
 import com.rxc.service.StudentService;
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 /**
  * @Description:
  * @Author RanXuCan
  * @Date 2020/9/22 23:24
  */
+@Controller
 public class StudentAction extends ActionSupport {
+    @Autowired
+    private StudentService studentService;
 
-    /**
-     *
-     */
+    @Getter
+    @Setter
     private Student stu;
-    private final StudentService studentService = new StudentService();
-
-    public Student getStu() {
-        return stu;
-    }
-
-    public void setStu(Student stu) {
-        this.stu = stu;
-    }
 
     public String studentRegist() {            //添加学生
         if (stu.getSsex().trim().equals("male")) stu.setSsex("男");

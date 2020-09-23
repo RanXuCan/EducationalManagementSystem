@@ -1,6 +1,7 @@
 package com.rxc.dao;
 
 import com.rxc.entity.Student;
+import org.springframework.stereotype.Repository;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,6 +12,7 @@ import java.sql.SQLException;
  * @Author RanXuCan
  * @Date 2020/9/22 19:55
  */
+@Repository
 public class StudentDao extends BaseDao {
 
     public boolean addStudent(Student stu) {

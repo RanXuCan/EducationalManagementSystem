@@ -3,7 +3,11 @@ package com.rxc.action;
 import com.opensymphony.xwork2.ActionSupport;
 import com.rxc.entity.Teacher;
 import com.rxc.service.TeacherService;
+import lombok.Getter;
+import lombok.Setter;
 import org.apache.struts2.ServletActionContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -12,23 +16,15 @@ import javax.servlet.http.HttpServletRequest;
  * @Author RanXuCan
  * @Date 2020/9/22 23:24
  */
+@Controller
 public class TeacherAction extends ActionSupport {
 
-    /**
-     *
-     */
-    private static final long serialVersionUID = 1L;
+    @Autowired
+    private TeacherService teacherService;
 
+    @Getter
+    @Setter
     private Teacher tea;
-    private final TeacherService teacherService = new TeacherService();
-
-    public Teacher getTea() {
-        return tea;
-    }
-
-    public void setTea(Teacher tea) {
-        this.tea = tea;
-    }
 
     public String teacherRegist() {            //添加教师
         HttpServletRequest request = ServletActionContext.getRequest();
